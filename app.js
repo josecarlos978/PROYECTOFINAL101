@@ -16,28 +16,30 @@ while (continuarJuego) {
          break;
       }
 
-      let numeroIntroducido = Number(entrada);
-      if (Number.isNaN(numeroIntroducido) || numeroIntroducido > 100 || numeroIntroducido < 1) {
-         alert("Numero invalido");
+      let numeroIntroducido = Number(entrada); // Convertir a número
+
+      // Validar entrada
+      if (Number.isNaN(numeroIntroducido) || numeroIntroducido > 100 || numeroIntroducido < 1) { // No es un número válido
+         alert("Numero invalido"); // No cuenta como intento
          continue;
       }
 
-      if (numeroAleatorio == numeroIntroducido) {
-         alert("GANASTE 🤓!!!!");
+      if (numeroAleatorio == numeroIntroducido) { // Adivinó
+         alert("GANASTE 🤓!!!!"); // Felicitaciones
          break; // gana la ronda
       }
 
-      if (numeroAleatorio < numeroIntroducido) {
-         alert("Intento fallido!!!");
-         alert("El numero es menor");
-      } else if (numeroAleatorio > numeroIntroducido) {
-         alert("Intento fallido!!!");
-         alert("El numero es mayor");
+      if (numeroAleatorio < numeroIntroducido) { // No adivinó, dar pista
+         alert("Intento fallido!!!"); // Pista
+         alert("El numero es menor"); // Pista
+      } else if (numeroAleatorio > numeroIntroducido) { // No adivinó, dar pista
+         alert("Intento fallido!!!"); // Pista
+         alert("El numero es mayor"); // Pista
       }
 
-      intentos++;
-      alert(`Intento Nro ${intentos}`);
-      console.log(`Intento Nro ${intentos}`);
+      intentos++; // Incrementar intentos
+      alert(`Intento Nro ${intentos}`); // Mostrar intento
+      console.log(`Intento Nro ${intentos}`); // Mostrar intento en consola
    }
 
    // Si el usuario canceló el prompt salimos del bucle principal
@@ -52,9 +54,9 @@ while (continuarJuego) {
    }
 
    // Preguntar al usuario si quiere jugar otra "ronda" de 3 intentos
-   let jugarDeNuevo = prompt("Quieres jugar de nuevo? (si/no)");
-   if (jugarDeNuevo === null) {
-      // Si cancela, terminamos
+   let jugarDeNuevo = prompt("Quieres jugar de nuevo? (si/no)"); 
+   // Si cancela, terminamos
+   if (jugarDeNuevo === null) { 
       continuarJuego = false;
    } else if (jugarDeNuevo.toLowerCase() === "si" || jugarDeNuevo.toLowerCase() === "s") {
       // continuarJuego ya es true, el while principal reiniciará con nuevo numero
@@ -66,3 +68,4 @@ while (continuarJuego) {
 }
 
 // https://github.com/josecarlos978/PROYECTOFINAL101.git
+
